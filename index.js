@@ -11,7 +11,7 @@ takeANumber(katzDeliLine, "Grace");
 takeANumber(katzDeliLine, "Kent");
 
 function nowServing(lineOfPeople) {
-	if (lineOfPeople.length < 0) {
+	if (lineOfPeople.length === 0) {
 		return "Currently serving " + lineOfPeople.shift();
 	} else {
 		return "There is nobody waiting to be served!";
