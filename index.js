@@ -10,21 +10,20 @@ takeANumber(katzDeliLine, "Ada");
 takeANumber(katzDeliLine, "Grace");
 takeANumber(katzDeliLine, "Kent");
 
-function nowServing(katzDeliLine) {
-  if (katzDeliLine.length === 0) {
-    return "There is nobody waiting to be served!";
-  }
-  var customer = katzDeliLine.shift();
-  return "Currently serving " + customer + ".";
+function nowServing(lineOfPeople) {
+	if (lineOfPeople.length > 0) {
+		return "Currently serving " + lineOfPeople.shift();
+	} else {
+		return "There is nobody waiting to be served!";
+	}
 }
 
-var currentLine = function(katzDeliLine) {
-  if (katzDeliLine.length === 0) {
-    return "The line is currently empty.";
-  }
-  var customerNo = [];
-  for (var i = 0; i < katzDeliLine.length; i++) {
-    customerNo.push(i + 1 + ". " + katzDeliLine[i])
-  }
-  return "The line is currently: " + customerNo.join(", ");
+function currentLine(lineOfPeople) {
+	var lineDescription = "This line is currently:";
+	for (var i = 0; i < lineOfPeople.length; i++) {
+		var person = lineOfPeople[i];
+		lineDescription = lineDescription + (i + 1) + ". " + person;
+	}
+	return lineDescription;
+
 }
