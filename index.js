@@ -11,7 +11,7 @@ takeANumber(katzDeliLine, "Grace");
 takeANumber(katzDeliLine, "Kent");
 
 function nowServing(katzDeliLine) {
-  if (katzDeliLine.length > 0) {
+  if (katzDeliLine.length === 0) {
     return "There is nobody waiting to be served!";
   }
   var customer = katzDeliLine.shift();
