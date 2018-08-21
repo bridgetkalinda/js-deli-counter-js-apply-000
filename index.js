@@ -18,12 +18,13 @@ function nowServing(katzDeliLine) {
   return "Currently serving " + customer + ".";
 }
 
-function currentLine(lineOfPeople) {
-	var lineDescription = "This line is currently:";
-	for (var i = 0; i < lineOfPeople.length; i++) {
-		var person = lineOfPeople[i];
-		lineDescription = lineDescription + (i + 1) + ". " + person;
-	}
-	return lineDescription;
-
+var currentLine = function(katzDeliLine) {
+  if (katzDeliLine.length === 0) {
+    return "The line is currently empty.";
+  }
+  var customerNo = [];
+  for (var i = 0; i < katzDeliLine.length; i++) {
+    customerNo.push(i + 1 + ". " + katzDeliLine[i])
+  }
+  return "The line is currently: " + customerNo.join(", ");
 }
